@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package src.juegodamas;
+import src.Tablero.Tablero;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -18,14 +15,16 @@ public class Principal {
      */
     Random Aleatoreo = new Random();
     Scanner sc = new Scanner(System.in);
-
+    char tablero[][] = new char [15][15];
+    Tablero Tab = new Tablero();
     public static void main(String[] args) {
         // TODO code application logic here
         Principal JD = new Principal();
-        
+
     }
-    public Principal(){
-    Menu();
+
+    public Principal() {
+        Menu();
     }
 
     /*Metodo Menu contiene la mayor parte de los metodos y es lo primero que
@@ -49,7 +48,12 @@ public class Principal {
 
                     break;
                 case 2:
-
+                  Tab.RellenarTablero(tablero);
+                  Tab.ColocarFichas(tablero);
+                  Tab.ColocarFichas2(tablero);
+                  Tab.ImprimirTablero(tablero);
+                  
+                  
                     break;
 
                 case 3:
@@ -65,5 +69,4 @@ public class Principal {
         }
 
     }
-
 }
