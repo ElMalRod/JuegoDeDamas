@@ -27,9 +27,9 @@ public class Tablero {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 if (((i + j) % 2) == 0) {
-                    tablero[i][j] = '#';
+                    tablero[i][j] = Negro;
                 } else {
-                    tablero[i][j] = '#';
+                    tablero[i][j] = Blanco;
                 }
             }
 
