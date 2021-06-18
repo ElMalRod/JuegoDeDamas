@@ -16,10 +16,11 @@ public class Principal {
      */
     Random Aleatoreo = new Random();
     Scanner sc = new Scanner(System.in);
-    char tablero[][] = new char [15][15];
+    String tablero[][] = new String[15][15];
     Tablero Tab = new Tablero();
     Jugador jugador = new Jugador();
     Jugador[] listadoJugadores = new Jugador[5];
+
     public static void main(String[] args) {
         // TODO code application logic here
         Principal JD = new Principal();
@@ -48,19 +49,18 @@ public class Principal {
 
             switch (opcion) {
                 case 1:
-                  jugador.agregarJugador(listadoJugadores);
+                    jugador.agregarJugador(listadoJugadores);
                     break;
                 case 2:
-                  Tab.RellenarTablero(tablero);
-                  Tab.ColocarFichas(tablero);
-                  Tab.ColocarFichas2(tablero);
-                  Tab.ImprimirTablero(tablero);
-                  
-                  
+                    Tab.RellenarTablero(tablero);
+                    Tab.ColocarFichas(tablero);
+                    Tab.ColocarFichas2(tablero);
+                    Tab.ImprimirTablero(tablero);
+
                     break;
 
                 case 3:
-                   jugador.listadoJugadores(listadoJugadores);
+                    jugador.listadoJugadores(listadoJugadores);
                     break;
                 case 4:
                     salir = true;
