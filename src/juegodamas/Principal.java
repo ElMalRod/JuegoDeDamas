@@ -1,6 +1,7 @@
 
 package src.juegodamas;
 import src.Tablero.Tablero;
+import src.Jugador.Jugador;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,6 +18,8 @@ public class Principal {
     Scanner sc = new Scanner(System.in);
     char tablero[][] = new char [15][15];
     Tablero Tab = new Tablero();
+    Jugador jugador = new Jugador();
+    Jugador[] listadoJugadores = new Jugador[5];
     public static void main(String[] args) {
         // TODO code application logic here
         Principal JD = new Principal();
@@ -45,7 +48,7 @@ public class Principal {
 
             switch (opcion) {
                 case 1:
-
+                  jugador.agregarJugador(listadoJugadores);
                     break;
                 case 2:
                   Tab.RellenarTablero(tablero);
@@ -57,7 +60,7 @@ public class Principal {
                     break;
 
                 case 3:
-
+                   jugador.listadoJugadores(listadoJugadores);
                     break;
                 case 4:
                     salir = true;
