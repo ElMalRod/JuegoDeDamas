@@ -1,4 +1,5 @@
 package src.Jugador;
+import src.Otros.PPT;
 import java.util.Scanner;
 /**
  *
@@ -6,10 +7,13 @@ import java.util.Scanner;
  */
 public class Jugador {
 
+    PPT Juego = new PPT();
     private int partidasGanadas = 0;
     private int partidasPerdidas = 0;
     private int puntuacionTotal = 0;
     private String nombreJugador;
+    int Jugador1;
+    int Jugador2;
     private IngresarDatos leerDatos = new IngresarDatos();
     Scanner sc = new Scanner(System.in);
     private int contadorJugadores = 0;
@@ -37,6 +41,14 @@ public class Jugador {
     }
 
     //Getters y Setters del Jugador
+    public int getJugador1() {
+        return Jugador1;
+    }
+
+    public int getJugador2() {
+        return Jugador2;
+    }
+
     public int getPartidasGanadas() {
         return partidasGanadas;
     }
@@ -103,13 +115,17 @@ public class Jugador {
         for (int i = 0; i < listadoJugadores.length; i++) {
             if (jugador1 == i) {
                 System.out.println("selecciono " + listadoJugadores[i].getNombreJugador() + " como Jugador 1");
+                Jugador1 = jugador1;
+
             }
         }
         for (int i = 0; i < listadoJugadores.length; i++) {
             if (jugador2 == i) {
                 System.out.println("selecciono " + listadoJugadores[i].getNombreJugador() + " como Jugador 2");
+                Jugador2 = jugador2;
             }
         }
+        Juego.pttingame();
 
     }
 

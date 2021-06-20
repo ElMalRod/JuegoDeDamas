@@ -2,6 +2,7 @@
 package src.juegodamas;
 import src.Tablero.Tablero;
 import src.Jugador.Jugador;
+import src.Otros.PPT;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -19,6 +20,7 @@ public class Principal {
     String tablero[][] = new String[15][15];
     Tablero Tab = new Tablero();
     Jugador jugador = new Jugador();
+    PPT ppt = new PPT();
     Jugador[] listadoJugadores = new Jugador[5];
     
     int X = 0, Y = 0;
@@ -34,7 +36,7 @@ public class Principal {
 
     /*Metodo Menu contiene la mayor parte de los metodos y es lo primero que
     visualiza el usuario*/
-        public void Menu() {
+           public void Menu() {
         boolean salir = false;
         int opcion; //Guardaremos la opcion del usuario
 
@@ -58,6 +60,8 @@ public class Principal {
                     Tab.ColocarFichas(tablero);
                     Tab.ColocarFichas2(tablero);
                     Tab.ImprimirTablero(tablero);
+                    //PiedraPapel
+                    ppt.pttingame();
                     while (Tab.getJugadorFichas() != 0 || Tab.getJugadorFichas2() != 0) {
                         System.out.println("Ingrese la ficha que desea mover: Jugador 1");
                         System.out.println("Posicion X");
@@ -71,6 +75,14 @@ public class Principal {
                         System.out.println("Posicion Y");
                         Y = sc.nextInt();
                         Tab.MoverFichas2(X, Y, tablero);
+                        if (Tab.getJugadorFichas() == 0) {
+                            System.out.println("GANA EL JUGADOR 1");
+                            listadoJugadores[jugador.getJugador1()].setPartidasPerdidas(1);
+                        }
+                        if (Tab.getJugadorFichas() == 0) {
+                            System.out.println("GANA EL JUGADOR 2");
+                            listadoJugadores[jugador.getJugador2()].setPartidasPerdidas(1);
+                        }
 
                     }
 
@@ -78,7 +90,7 @@ public class Principal {
                     jugador.listadoJugadores(listadoJugadores);
                     break;
                 case 4:
-                    
+                    ppt.pttingame();
                     salir = true;
                     break;
                 default:
