@@ -1,2 +1,5 @@
-build/*
-/JuegoDamas/nbproject/private/
+*class
+*jar
+./build
+./dist
+
