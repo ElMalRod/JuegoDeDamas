@@ -14,13 +14,14 @@ public class Principal {
     /**
      * @param args the command line arguments
      */
-    Random Aleatoreo = new Random();
+     Random Aleatoreo = new Random();
     Scanner sc = new Scanner(System.in);
     String tablero[][] = new String[15][15];
     Tablero Tab = new Tablero();
     Jugador jugador = new Jugador();
     Jugador[] listadoJugadores = new Jugador[5];
-    int X = 0, Y= 0;
+    
+    int X = 0, Y = 0;
     public static void main(String[] args) {
         // TODO code application logic here
         Principal JD = new Principal();
@@ -33,7 +34,7 @@ public class Principal {
 
     /*Metodo Menu contiene la mayor parte de los metodos y es lo primero que
     visualiza el usuario*/
-    public void Menu() {
+        public void Menu() {
         boolean salir = false;
         int opcion; //Guardaremos la opcion del usuario
 
@@ -52,31 +53,32 @@ public class Principal {
                     jugador.agregarJugador(listadoJugadores);
                     break;
                 case 2:
-                    
+                    jugador.seleccionjugador(listadoJugadores);
                     Tab.RellenarTablero(tablero);
                     Tab.ColocarFichas(tablero);
                     Tab.ColocarFichas2(tablero);
                     Tab.ImprimirTablero(tablero);
-                    while(Tab.getJugadorFichas()!=0||Tab.getJugadorFichas2()!=0){
-                    System.out.println("Ingrese la ficha que desea mover: Jugador 1");
-                    System.out.println("Posicion X");
-                    X = sc.nextInt();
-                    System.out.println("Posicion Y");
-                    Y = sc.nextInt();
-                    Tab.MoverFichas(X, Y, tablero);
-                    System.out.println("Ingrese la ficha que desea mover: Jugador 2");
-                    System.out.println("Posicion X");
-                    X = sc.nextInt();
-                    System.out.println("Posicion Y");
-                    Y = sc.nextInt();
-                    Tab.MoverFichas2(X, Y, tablero);
-                    
+                    while (Tab.getJugadorFichas() != 0 || Tab.getJugadorFichas2() != 0) {
+                        System.out.println("Ingrese la ficha que desea mover: Jugador 1");
+                        System.out.println("Posicion X");
+                        X = sc.nextInt();
+                        System.out.println("Posicion Y");
+                        Y = sc.nextInt();
+                        Tab.MoverFichas(X, Y, tablero);
+                        System.out.println("Ingrese la ficha que desea mover: Jugador 2");
+                        System.out.println("Posicion X");
+                        X = sc.nextInt();
+                        System.out.println("Posicion Y");
+                        Y = sc.nextInt();
+                        Tab.MoverFichas2(X, Y, tablero);
+
                     }
-                    
+
                 case 3:
                     jugador.listadoJugadores(listadoJugadores);
                     break;
                 case 4:
+                    
                     salir = true;
                     break;
                 default:
