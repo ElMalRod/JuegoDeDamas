@@ -12,8 +12,8 @@ public class Tablero {
       *  Variables que Utilizamos para Tablero
       */
 
-    int JugadorFichas = 2;
-    int JugadorFichas2 = 2;
+    int JugadorFichas = 20;
+    int JugadorFichas2 = 20;
     boolean game = false;
 
     Scanner sc = new Scanner(System.in);

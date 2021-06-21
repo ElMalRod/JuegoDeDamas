@@ -21,7 +21,7 @@ public class Principal {
     Tablero Tab = new Tablero();
     Jugador jugador = new Jugador();
     PPT ppt = new PPT();
-    Jugador[] listadoJugadores = new Jugador[5];
+    Jugador[] listadoJugadores = new Jugador[10];
     
     int X = 0, Y = 0;
     public static void main(String[] args) {
@@ -76,13 +76,13 @@ public class Principal {
             
                     while (Tab.isGame() != true) {
 
-                        System.out.println("Ingrese la ficha que desea mover: Jugador 1 " + Tab.getJugadorFichas());
+                        System.out.println("Ingrese la ficha que desea mover: Jugador 1 ");
                         System.out.println("Posicion X");
                         X = sc.nextInt();
                         System.out.println("Posicion Y");
                         Y = sc.nextInt();
                         Tab.MoverFichas(X, Y, tablero);
-                        System.out.println("Ingrese la ficha que desea mover: Jugador 2 " + Tab.getJugadorFichas2());
+                        System.out.println("Ingrese la ficha que desea mover: Jugador 2 " );
                         System.out.println("Posicion X");
                         X = sc.nextInt();
                         System.out.println("Posicion Y");
