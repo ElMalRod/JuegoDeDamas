@@ -8,11 +8,14 @@ import java.util.Scanner;
  * @author emili
  */
 public class Tablero {
+     /**
+      *  Variables que Utilizamos para Tablero
+      */
 
     int JugadorFichas = 2;
     int JugadorFichas2 = 2;
     boolean game = false;
-    
+
     Scanner sc = new Scanner(System.in);
     public static final String ANSI_WHITE = "\u001B[37m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
@@ -24,7 +27,9 @@ public class Tablero {
     public Tablero() {
 
     }
-
+    /**
+      *  Getters and Setters de Tablero
+      */
     public int getJugadorFichas() {
         return JugadorFichas;
     }
@@ -36,7 +41,6 @@ public class Tablero {
     public boolean isGame() {
         return game;
     }
-    
 
     public void setJugadorFichas(int JugadorFichas) {
         this.JugadorFichas = JugadorFichas;
@@ -45,7 +49,9 @@ public class Tablero {
     public void setJugadorFichas2(int JugadorFichas2) {
         this.JugadorFichas2 = JugadorFichas2;
     }
-
+    /**
+      *  Metodo para imprimir el Tablero
+      */
     public void ImprimirTablero(String tablero[][]) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
@@ -55,7 +61,9 @@ public class Tablero {
         }
 
     }
-
+    /**
+      *  Metodo para Rellenar el Tablero con las Fichas de los Jugadores
+      */
     public void RellenarTablero(String tablero[][]) {
 
         for (int i = 0; i < 10; i++) {
@@ -69,7 +77,9 @@ public class Tablero {
 
         }
     }
-
+    /**
+      *  Metodo para Colocar las ficha del jugador 1 en el Tablero
+      */
     public void ColocarFichas(String tablero[][]) {
 
         String Ficha = "X";
@@ -84,7 +94,9 @@ public class Tablero {
 
         }
     }
-
+    /**
+      *  Metodo para Colocar las ficha del jugador 2 en el Tablero
+      */
     public void ColocarFichas2(String tablero[][]) {
 
         String Ficha = "O";
@@ -98,6 +110,10 @@ public class Tablero {
 
         }
     }
+    /**
+      *  Metodo para Mover la ficha del jugador 1 en el Tablero y hace las comparaciones correctas
+      * Indica quien es el ganador y recibe las peticiones del usuario en le clase principal
+      */
 
     public void MoverFichas(int PosicionX, int PosicionY, String tablero[][]) {
         if (tablero[PosicionX][PosicionY] == "X") {
@@ -119,15 +135,18 @@ public class Tablero {
         }
         if (JugadorFichas == 0) {
             System.out.println("GANA EL JUGADOR 2");
-            
-            game=true;
-           
-        }
-        else if (JugadorFichas2 == 0) {
+
+            game = true;
+
+        } else if (JugadorFichas2 == 0) {
             System.out.println("GANA EL JUGADOR 1");
-            game=true;
+            game = true;
         }
     }
+    /**
+      *  Metodo para Mover la ficha del jugador 2 en el Tablero y hace las comparaciones correctas
+      * Indica quien es el ganador y recibe las peticiones del usuario en le clase principal
+      */
 
     public void MoverFichas2(int PosicionX, int PosicionY, String tablero[][]) {
         if (tablero[PosicionX][PosicionY] == "O") {
@@ -148,12 +167,11 @@ public class Tablero {
         }
         if (JugadorFichas == 0) {
             System.out.println("GANA EL JUGADOR 2");
-            game=true;
+            game = true;
 
-        }
-        else if (JugadorFichas2 == 0) {
+        } else if (JugadorFichas2 == 0) {
             System.out.println("GANA EL JUGADOR 1");
-            game=true;
+            game = true;
 
         }
 

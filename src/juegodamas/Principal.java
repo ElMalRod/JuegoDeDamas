@@ -57,15 +57,23 @@ public class Principal {
 
             switch (opcion) {
                 case 1:
+                /**
+                *  Llamamos a la Metodo de agregar  jugadores que llena el arreglo de jugadores
+                */
                     jugador.agregarJugador(listadoJugadores);
                     break;
                 case 2:
+                /**
+                *  Aqui va incluido PiedraPapel y los metodos de mover la ficha de jugadores
+                *  Tambien al finalizar los metodos con condiciones shace las suma de las partidas
+                *  tanto ganadas como perdidas
+                */
                     jugador.seleccionjugador(listadoJugadores);
                     Tab.RellenarTablero(tablero);
                     Tab.ColocarFichas(tablero);
                     Tab.ColocarFichas2(tablero);
                     Tab.ImprimirTablero(tablero);
-                    //PiedraPapel
+            
                     while (Tab.isGame() != true) {
 
                         System.out.println("Ingrese la ficha que desea mover: Jugador 1 " + Tab.getJugadorFichas());
@@ -95,10 +103,13 @@ public class Principal {
                     break;
 
                 case 3:
+                /**
+                *  Llamamos a la Metodo de lista de jugadores e indica el resumen de las partidas ganadas
+                */
+                   
                     jugador.listadoJugadores(listadoJugadores);
                     break;
                 case 4:
-                    ppt.pttingame();
                     salir = true;
                     break;
                 default:

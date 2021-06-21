@@ -10,7 +10,9 @@ import java.util.Scanner;
  * @author emili
  */
 public class PPT {
-
+     /**
+      *  Variables que Utilizamos para Jugador
+      */  
     Scanner teclado = new Scanner(System.in);
     Random Aleatoreo = new Random();
     int seleccionUsuario;
@@ -19,7 +21,10 @@ public class PPT {
     public PPT() {
        
     }
-
+      /**
+      *  Metodo Prieda papel o tijera , indica quien de los jugadoes gana por medio
+      *  de numeros random
+      */ 
     public void pttingame() {
         seleccionUsuario2 = Aleatoreo.nextInt(3) + 1;
         seleccionUsuario = Aleatoreo.nextInt(3) + 1;
