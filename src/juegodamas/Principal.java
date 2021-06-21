@@ -34,9 +34,14 @@ public class Principal {
         Menu();
     }
 
+   public Jugador[] getListadoJugadores() {
+        return listadoJugadores;
+    }
+
+
     /*Metodo Menu contiene la mayor parte de los metodos y es lo primero que
     visualiza el usuario*/
-           public void Menu() {
+    public void Menu() {
         boolean salir = false;
         int opcion; //Guardaremos la opcion del usuario
 
@@ -61,30 +66,33 @@ public class Principal {
                     Tab.ColocarFichas2(tablero);
                     Tab.ImprimirTablero(tablero);
                     //PiedraPapel
-                    ppt.pttingame();
-                    while (Tab.getJugadorFichas() != 0 || Tab.getJugadorFichas2() != 0) {
-                        System.out.println("Ingrese la ficha que desea mover: Jugador 1");
+                    while (Tab.isGame() != true) {
+
+                        System.out.println("Ingrese la ficha que desea mover: Jugador 1 " + Tab.getJugadorFichas());
                         System.out.println("Posicion X");
                         X = sc.nextInt();
                         System.out.println("Posicion Y");
                         Y = sc.nextInt();
                         Tab.MoverFichas(X, Y, tablero);
-                        System.out.println("Ingrese la ficha que desea mover: Jugador 2");
+                        System.out.println("Ingrese la ficha que desea mover: Jugador 2 " + Tab.getJugadorFichas2());
                         System.out.println("Posicion X");
                         X = sc.nextInt();
                         System.out.println("Posicion Y");
                         Y = sc.nextInt();
                         Tab.MoverFichas2(X, Y, tablero);
-                        if (Tab.getJugadorFichas() == 0) {
-                            System.out.println("GANA EL JUGADOR 1");
-                            listadoJugadores[jugador.getJugador1()].setPartidasPerdidas(1);
-                        }
-                        if (Tab.getJugadorFichas() == 0) {
-                            System.out.println("GANA EL JUGADOR 2");
-                            listadoJugadores[jugador.getJugador2()].setPartidasPerdidas(1);
-                        }
 
                     }
+                    if (Tab.getJugadorFichas2() == 0) {
+                       
+                        listadoJugadores[jugador.getJugador2()].setPartidasPerdidas(+1);
+                        listadoJugadores[jugador.getJugador1()].setPartidasGanadas(+1);
+                    }
+                    if (Tab.getJugadorFichas() == 0) {
+                       
+                        listadoJugadores[jugador.getJugador1()].setPartidasPerdidas(+1);
+                        listadoJugadores[jugador.getJugador2()].setPartidasGanadas(+1);
+                    }
+                    break;
 
                 case 3:
                     jugador.listadoJugadores(listadoJugadores);
